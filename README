@@ -1,0 +1,15 @@
+repo-sync
+=========
+
+Will be an utility to easily mirror multiple git repositories to a another
+location. Useful for example if you would like to have a copy of your code
+on github or similar services, while actually working with your own server.
+
+
+Planned Features
+----------------
+
+* Initial support for git only, bzr/hg planned.
+* Ability to sync using cron, or via a post-commit hook. Function to
+  auto-install the hooks in all synced repositories.
+* Work seemlessly with gitosis, bazitis, mercurial-server or similar tools.
