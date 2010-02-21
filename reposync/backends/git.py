@@ -5,10 +5,16 @@ import subprocess
 class GitBackend(object):
 
     def can_handle(self, job):
-        git_dir = path.join(job.repository, '.git')
-        if path.exists(git_dir):
-            job.__git_dir = git_dir
-            return True
+        """This is adapted based on the detection code in git/setup.c
+        """
+        for possibility in ('', '.git'):
+            possible_git_dir = path.join(job.repository, possibility)
+            for requirement in ('objects', 'refs', 'HEAD'):
+                if not path.exists(path.join(possible_git_dir, requirement)):
+                    break
+            else:
+                job.__git_dir = possible_git_dir
+                return True
         return False
 
     def run(self, job):
