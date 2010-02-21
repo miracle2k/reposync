@@ -1,3 +1,4 @@
 *.pyc
+/.reposync.conf
 
 /repo-sync.wpr
