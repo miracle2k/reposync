@@ -70,8 +70,8 @@ def main():
     for job in jobs:
         backend = get_backend(job)
         if not backend:
-            raise RuntimeError('Unable to process %s: Not a repository, or '+
-                               'unsupported repository type.' % job.repository)
+            raise RuntimeError(('Unable to process %s: Not a repository, or '+
+                                'unsupported repository type.') % job.repository)
         backend.run(job)
 
 
