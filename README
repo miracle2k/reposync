@@ -5,6 +5,8 @@ Will be an utility to easily mirror multiple git repositories to a another
 location. Useful for example if you would like to have a copy of your code
 on github or similar services, while actually working with your own server.
 
+**Development is temporarily on hold; the gitosis fork at 
+http://github.com/res0nat0r/gitosis has the ability to mirror integrated.**
 
 Features
 --------
@@ -35,3 +37,14 @@ push url:
 
 Lines prefixed with ``#`` are considered comments and are ignored, as
 are empty lines.
+
+
+TODO
+----
+
+* Some way to hook this into a git post-receive hook, so that only the
+  changed repository get's mirrored.
+* Tests!
+* It would be nice if the config file could be placed in the gitosis-admin
+  repository, and gitosis taking care of installing the hooks when
+  mirroring is enabled for a repository etc.
